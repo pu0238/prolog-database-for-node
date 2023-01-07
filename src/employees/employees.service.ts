@@ -1,6 +1,9 @@
 import { prologDB } from './../../db/prologDB.service';
 import { Injectable, InternalServerErrorException } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
+import * as crypto from 'crypto';
+import { fstat } from 'fs';
+import { GetEmployees } from './dto/getEmployees.dto';
 
 @Injectable()
 export class EmployeesService {
@@ -48,27 +51,81 @@ export class EmployeesService {
     ).`;
 
     const result = await this.prologDBService.findOne(query);
-    console.log(result);
     if (!result) throw new InternalServerErrorException();
-    return { ...result, idPracownika };
+    return { ...result, idPracownika } as {
+      idPracownika: string;
+      stanowisko: string;
+      imiePracownika: string;
+      nazwiskoPracownika: string;
+      wiekPracownika: number;
+    };
   }
 
-  async insertEmployee() {
-    const data = `pracownik(id_pracownika("42adde3b-8025-4d3c-866f-5f3d51c7f8d4"), stanowisko(magazynier), imie_pracownika(jan), nazwisko_pracownika(kowalski), wiek_pracownika(35)).`;
-    const result = await this.prologDBService.insert(data);
-    /*const data =
+  async insertEmployee(
+    imiePracownika: string,
+    nazwiskoPracownika: string,
+    wiekPracownika: number,
+    stanowisko: string,
+  ) {
+    const idPracownika = crypto.randomUUID();
+    const data =
       `pracownik(` +
-      `id_pracownika('${idPracownika}'), ` +
-      `stanowisko(Stanowisko), ` +
-      `imie_pracownika(ImiePracownika), ` +
-      `nazwisko_pracownika(NazwiskoPracownika), ` +
-      `wiek_pracownika(WiekPracownika)` +
-      `).`;*/
-    /*
-    fs.appendFileSync(data);
+      `id_pracownika('${idPracownika}'),` +
+      `stanowisko(${stanowisko}),` +
+      `imie_pracownika(${imiePracownika}),` +
+      `nazwisko_pracownika(${nazwiskoPracownika}),` +
+      `wiek_pracownika(${wiekPracownika})` +
+      `).`;
+    await this.prologDBService.insert(data);
+    return await this.getEmployee(idPracownika);
+  }
 
-    const result = await getOne(this.database, query);
-    if (!result) throw new InternalServerErrorException();
-    return { ...result, idPracownika };*/
-  } /**/
+  async removeEmployee(idPracownika: string) {
+    const employee = await this.getEmployee(idPracownika);
+    const data =
+      `pracownik(` +
+      `id_pracownika('${idPracownika}'),` +
+      `stanowisko(${employee.stanowisko}),` +
+      `imie_pracownika(${employee.imiePracownika}),` +
+      `nazwisko_pracownika(${employee.nazwiskoPracownika}),` +
+      `wiek_pracownika(${employee.wiekPracownika})` +
+      `).`;
+    await this.prologDBService.remove(data);
+  }
+
+  async updateEmployee(idPracownika: string, queryParams: GetEmployees) {
+    const employee = await this.getEmployee(idPracownika);
+    const removeData =
+      `pracownik(` +
+      `id_pracownika('${idPracownika}'),` +
+      `stanowisko(${employee.stanowisko}),` +
+      `imie_pracownika(${employee.imiePracownika}),` +
+      `nazwisko_pracownika(${employee.nazwiskoPracownika}),` +
+      `wiek_pracownika(${employee.wiekPracownika})` +
+      `).`;
+    const updateData =
+      `pracownik(` +
+      `id_pracownika('${idPracownika}'),` +
+      `stanowisko(${
+        queryParams.stanowisko ? queryParams.stanowisko : employee.stanowisko
+      }),` +
+      `imie_pracownika(${
+        queryParams.imiePracownika
+          ? queryParams.imiePracownika
+          : employee.imiePracownika
+      }),` +
+      `nazwisko_pracownika(${
+        queryParams.nazwiskoPracownika
+          ? queryParams.nazwiskoPracownika
+          : employee.nazwiskoPracownika
+      }),` +
+      `wiek_pracownika(${
+        queryParams.wiekPracownika
+          ? queryParams.wiekPracownika
+          : employee.wiekPracownika
+      })` +
+      `).`;
+    await this.prologDBService.update(removeData, updateData);
+    return await this.getEmployee(idPracownika);
+  }
 }

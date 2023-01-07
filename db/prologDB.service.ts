@@ -1,7 +1,7 @@
 import pl from 'tau-prolog';
 import plPromises from 'tau-prolog/modules/promises.js';
 import * as fs from 'fs';
-import { ConflictException } from '@nestjs/common';
+import { ConflictException, NotFoundException } from '@nestjs/common';
 
 plPromises(pl);
 
@@ -10,7 +10,7 @@ export class prologDB {
 
   private readonly pathToDatabase = `./db/${this.databaseName}.pl`;
 
-  async findOne(query) {
+  async findOne(query): Promise<{ [key: string]: string }> {
     const session = pl.create(1000);
     await session.promiseConsult(this.pathToDatabase, { file: true });
     await session.promiseQuery(query);
@@ -19,6 +19,7 @@ export class prologDB {
       if (!formatedAnswer) return undefined;
       return formatedAnswer;
     }
+    throw new NotFoundException('Cannot find item with the given ID');
   }
 
   async find(query) {
@@ -38,13 +39,27 @@ export class prologDB {
     const session = pl.create(1000);
     await session.promiseConsult(this.pathToDatabase, { file: true });
     await session.promiseQuery(data);
-    session.answers((answer) => {
-      console.log(answer);
-    });
-    for await (const answer of session.promiseAnswers())
+    for await (const answer of session.promiseAnswers()) {
       if (answer) throw new ConflictException('Data already exist');
-    console.log(data);
-    fs.appendFileSync(this.pathToDatabase, data);
+    }
+    await fs.appendFileSync(this.pathToDatabase, `${data}\n`);
+    await session.promiseConsult(this.pathToDatabase, { file: true });
+  }
+
+  async update(dataToReplace, newData) {
+    const session = pl.create(1000);
+    const database = await fs.readFileSync(this.pathToDatabase).toString();
+    const result = database.replace(`${dataToReplace}\n`, `${newData}\n`);
+    await fs.writeFileSync(this.pathToDatabase, result);
+    await session.promiseConsult(this.pathToDatabase, { file: true });
+  }
+
+  async remove(data) {
+    const session = pl.create(1000);
+    const database = await fs.readFileSync(this.pathToDatabase).toString();
+    const result = database.replace(`${data}\n`, '');
+    await fs.writeFileSync(this.pathToDatabase, result);
+    await session.promiseConsult(this.pathToDatabase, { file: true });
   }
 
   private formatJSON = (session: any, answer: any) => {
