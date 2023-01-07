@@ -1,4 +1,4 @@
-% Magazynierzy
+% Pracownicy
 
 magazynier(id_pracownika(5), imie_pracownika(jan), nazwisko_pracownika(kowalski), wiek_pracownika(35)).
 magazynier(id_pracownika(2), imie_pracownika(anna), nazwisko_pracownika(nowak), wiek_pracownika(29)).

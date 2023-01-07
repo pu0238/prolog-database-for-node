@@ -4,12 +4,6 @@ import { ApiProperty } from '@nestjs/swagger';
 
 export class GetEmployees {
   @ApiProperty()
-  @IsNumber()
-  @Type(() => Number)
-  @IsOptional()
-  idPracownika: number;
-
-  @ApiProperty()
   @IsString()
   @IsOptional()
   imiePracownika: string;
@@ -24,4 +18,9 @@ export class GetEmployees {
   @Type(() => Number)
   @IsOptional()
   wiekPracownika: number;
+
+  @ApiProperty()
+  @IsString()
+  @IsOptional()
+  stanowisko;
 }
