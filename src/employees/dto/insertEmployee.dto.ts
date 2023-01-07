@@ -18,5 +18,5 @@ export class InsertEmployee {
 
   @ApiProperty()
   @IsString()
-  stanowisko;
+  stanowisko: string;
 }
