@@ -21,32 +21,32 @@ pracownik(id_pracownika('f9db7e07-d65d-44d6-a2e2-60bbe55b6a57'),stanowisko(sprze
 
 % Ubrania
 
-produkt(id_produktu('9e7c6dcd-65f1-473c-95d2-5daeeb4b2105'),typ_produktu(ubranie),nazwa_ubrania(kurtka_zimowa),rozmiar_produktu(M),kolor_ubrania(bialy),stan_magazynowy(20),cena(60)).
-produkt(id_produktu('485b09a1-c0ba-4613-babd-65110dbc877d'),typ_produktu(ubranie),nazwa_ubrania(sweter_z_welny),rozmiar_produktu(L),kolor_ubrania(czarny),stan_magazynowy(13),cena(120)).
-produkt(id_produktu('0ba05e10-d85a-4fc5-a08d-6647dcca339a'),typ_produktu(akcesorium),nazwa_ubrania(czapka_z_daszkiem),rozmiar_produktu(S),kolor_ubrania(czerwony),stan_magazynowy(17),cena(250)).
-produkt(id_produktu('f3f7dbb5-cb1e-4ca2-a377-7a7a788d1c13'),typ_produktu(akcesorium),nazwa_ubrania(rekawiczki_z_futra_sztucznego),rozmiar_produktu(XL),kolor_ubrania(niebieski),stan_magazynowy(9),cena(180)).
-produkt(id_produktu('1e3c03f8-7ebf-452e-9693-dbfb9da487ea'),typ_produktu(akcesorium),nazwa_ubrania(chusta_z_cienkiej_dzianiny),rozmiar_produktu(L),kolor_ubrania(bialy),stan_magazynowy(4),cena(90)).
-produkt(id_produktu('4e51f7fa-eccd-42a7-b8f8-1c84ba9d927c'),typ_produktu(ubranie),nazwa_ubrania(plaszcz_przeciwdeszczowy),rozmiar_produktu(M),kolor_ubrania(szary),stan_magazynowy(16),cena(80)).
-produkt(id_produktu('b1e3d69b-cc7f-4476-beb7-c56a6f28b638'),typ_produktu(akcesorium),nazwa_ubrania(skarpety_antyposlizgowe),rozmiar_produktu(S),kolor_ubrania(zielony),stan_magazynowy(23),cena(50)).
-produkt(id_produktu('a2d57fad-5a48-4efc-8f47-c2a2e2bca6b8'),typ_produktu(buty),nazwa_ubrania(buty_zimowe),rozmiar_produktu(L),kolor_ubrania(czarny),stan_magazynowy(7),cena(200)).
-produkt(id_produktu('5b5e4e4f-938d-4a1b-8c3c-d3b81eeb7a24'),typ_produktu(ubranie),nazwa_ubrania(spodnie_dresowe),rozmiar_produktu(XL),kolor_ubrania(czerwony),stan_magazynowy(12),cena(160)).
-produkt(id_produktu('0cad6f1f-b3c3-4a82-bf97-3e7d8cbe8060'),typ_produktu(ubranie),nazwa_ubrania(bluza_z_kapturem),rozmiar_produktu(S),kolor_ubrania(niebieski),stan_magazynowy(20),cena(70)).
-produkt(id_produktu('8f9cceaa-6fc5-4ecf-8b23-b1a7a2c68b44'),typ_produktu(akcesorium),nazwa_ubrania(okulary_przeciwsloneczne),rozmiar_produktu(XL),kolor_ubrania(szary),stan_magazynowy(9),cena(110)).
-produkt(id_produktu('ef0e4d4c-56a9-4d1c-8a2b-aeea7fdec57c'),typ_produktu(bizuteria),nazwa_ubrania(spinki_do_mankietow),rozmiar_produktu(M),kolor_ubrania(czarny),stan_magazynowy(21),cena(60)).
-produkt(id_produktu('da7d1272-2e2a-4444-b7b7-936a4751d2b3'),typ_produktu(bizuteria),nazwa_ubrania(naszyjnik_z_koralikow),rozmiar_produktu(S),kolor_ubrania(zielony),stan_magazynowy(10),cena(50)).
-produkt(id_produktu('2e6bc689-b69e-4fbe-8e97-6a34a6a9a8e2'),typ_produktu(bizuteria),nazwa_ubrania(bransoletka_z_kamieni_szlachetnych),rozmiar_produktu(M),kolor_ubrania(czarny),stan_magazynowy(15),cena(800)).
-produkt(id_produktu('5e66e5d5-cb0b-47bb-b5d5-4e6e4b4e4d6d'),typ_produktu(akcesorium),nazwa_ubrania(zegarek_z_mechanizmem_automatycznym),rozmiar_produktu(L),kolor_ubrania(fioletowy),stan_magazynowy(7),cena(100)).
-produkt(id_produktu('9a7ccbe7-a2a2-401b-8d8d-2c2cba5ba5e5'),typ_produktu(akcesorium),nazwa_ubrania(portfel_z_skory_naturalnej),rozmiar_produktu(XL),kolor_ubrania(szary),stan_magazynowy(3),cena(200)).
-produkt(id_produktu('a069e9c8-a22f-47b3-b3a3-7043f5f5c5e5'),typ_produktu(akcesorium),nazwa_ubrania(torebka_listonoszka),rozmiar_produktu(S),kolor_ubrania(czerwony),stan_magazynowy(12),cena(60)).
-produkt(id_produktu('1f3d4e4e-afaf-4e4e-b6b6-6b6b4f4f3f3f'),typ_produktu(akcesorium),nazwa_ubrania(kapelusz_panama),rozmiar_produktu(M),kolor_ubrania(zolty),stan_magazynowy(20),cena(50)).
-produkt(id_produktu('9e7c6dcd-65f1-473c-95d2-5daeeb4b2105'),typ_produktu(akcesorium),nazwa_ubrania(pasek_skorzany),rozmiar_produktu(L),kolor_ubrania(czarny),stan_magazynowy(13),cena(120)).
-produkt(id_produktu('18dd8a87-87d7-4161-b1a7-d5d99f87b9e2'),typ_produktu(akcesorium),nazwa_ubrania(szelki_do_spodni),rozmiar_produktu(M),kolor_ubrania(czarny),stan_magazynowy(12),cena(130)).
-produkt(id_produktu('95dd0f27-b38d-4491-b7b2-00a3fce6e8e6'),typ_produktu(ubranie),nazwa_ubrania(spodnica_plisowana),rozmiar_produktu(S),kolor_ubrania(zielony),stan_magazynowy(8),cena(180)).
-produkt(id_produktu('38e664c9-f1b6-47f5-b63e-5d5b1f5d1c5e'),typ_produktu(ubranie),nazwa_ubrania(sukienka_maxi),rozmiar_produktu(L),kolor_ubrania(czerwony),stan_magazynowy(5),cena(80)).
-produkt(id_produktu('1d5b9452-9ac9-45a8-b5cc-f94ea5f5e5c1'),typ_produktu(ubranie),nazwa_ubrania(marynarka_z_linii_slim_fit),rozmiar_produktu(M),kolor_ubrania(szary),stan_magazynowy(15),cena(100)).
-produkt(id_produktu('4f4e9c7d-9b91-4e87-87d5-d7b6ac27e6f8'),typ_produktu(buty),nazwa_ubrania(buty_mokasyny),rozmiar_produktu(XS),kolor_ubrania(rozowy),stan_magazynowy(6),cena(150)).
-produkt(id_produktu('e0ad5f5d-a0b2-47b5-bfd5-bfd0a39c6981'),typ_produktu(akcesorium),nazwa_ubrania(czapka_zimowa_z_pomponem),rozmiar_produktu(M),kolor_ubrania(czarny),stan_magazynowy(20),cena(20)).
-produkt(id_produktu('3b3f3b7d-b8a1-43e6-b5f3-c0137b5e5e5c'),typ_produktu(akcesorium),nazwa_ubrania(kominiarka),rozmiar_produktu(XL),kolor_ubrania(niebieski),stan_magazynowy(10),cena(70)).
+produkt(id_produktu('9e7c6dcd-65f1-473c-95d2-5daeeb4b2105'),typ_produktu(ubranie),nazwa_produktu(kurtka_zimowa),rozmiar_produktu(size_M),kolor_produktu(bialy),stan_magazynowy(20),cena_produktu(60)).
+produkt(id_produktu('485b09a1-c0ba-4613-babd-65110dbc877d'),typ_produktu(ubranie),nazwa_produktu(sweter_z_welny),rozmiar_produktu(size_L),kolor_produktu(czarny),stan_magazynowy(13),cena_produktu(120)).
+produkt(id_produktu('0ba05e10-d85a-4fc5-a08d-6647dcca339a'),typ_produktu(akcesorium),nazwa_produktu(czapka_z_daszkiem),rozmiar_produktu(size_S),kolor_produktu(czerwony),stan_magazynowy(17),cena_produktu(250)).
+produkt(id_produktu('f3f7dbb5-cb1e-4ca2-a377-7a7a788d1c13'),typ_produktu(akcesorium),nazwa_produktu(rekawiczki_z_futra_sztucznego),rozmiar_produktu(size_XL),kolor_produktu(niebieski),stan_magazynowy(9),cena_produktu(180)).
+produkt(id_produktu('1e3c03f8-7ebf-452e-9693-dbfb9da487ea'),typ_produktu(akcesorium),nazwa_produktu(chusta_z_cienkiej_dzianiny),rozmiar_produktu(size_L),kolor_produktu(bialy),stan_magazynowy(4),cena_produktu(90)).
+produkt(id_produktu('4e51f7fa-eccd-42a7-b8f8-1c84ba9d927c'),typ_produktu(ubranie),nazwa_produktu(plaszcz_przeciwdeszczowy),rozmiar_produktu(size_M),kolor_produktu(szary),stan_magazynowy(16),cena_produktu(80)).
+produkt(id_produktu('b1e3d69b-cc7f-4476-beb7-c56a6f28b638'),typ_produktu(akcesorium),nazwa_produktu(skarpety_antyposlizgowe),rozmiar_produktu(size_S),kolor_produktu(zielony),stan_magazynowy(23),cena_produktu(50)).
+produkt(id_produktu('a2d57fad-5a48-4efc-8f47-c2a2e2bca6b8'),typ_produktu(buty),nazwa_produktu(buty_zimowe),rozmiar_produktu(size_L),kolor_produktu(czarny),stan_magazynowy(7),cena_produktu(200)).
+produkt(id_produktu('5b5e4e4f-938d-4a1b-8c3c-d3b81eeb7a24'),typ_produktu(ubranie),nazwa_produktu(spodnie_dresowe),rozmiar_produktu(size_XL),kolor_produktu(czerwony),stan_magazynowy(12),cena_produktu(160)).
+produkt(id_produktu('0cad6f1f-b3c3-4a82-bf97-3e7d8cbe8060'),typ_produktu(ubranie),nazwa_produktu(bluza_z_kapturem),rozmiar_produktu(size_S),kolor_produktu(niebieski),stan_magazynowy(20),cena_produktu(70)).
+produkt(id_produktu('8f9cceaa-6fc5-4ecf-8b23-b1a7a2c68b44'),typ_produktu(akcesorium),nazwa_produktu(okulary_przeciwsloneczne),rozmiar_produktu(size_XL),kolor_produktu(szary),stan_magazynowy(9),cena_produktu(110)).
+produkt(id_produktu('ef0e4d4c-56a9-4d1c-8a2b-aeea7fdec57c'),typ_produktu(bizuteria),nazwa_produktu(spinki_do_mankietow),rozmiar_produktu(size_M),kolor_produktu(czarny),stan_magazynowy(21),cena_produktu(60)).
+produkt(id_produktu('da7d1272-2e2a-4444-b7b7-936a4751d2b3'),typ_produktu(bizuteria),nazwa_produktu(naszyjnik_z_koralikow),rozmiar_produktu(size_S),kolor_produktu(zielony),stan_magazynowy(10),cena_produktu(50)).
+produkt(id_produktu('2e6bc689-b69e-4fbe-8e97-6a34a6a9a8e2'),typ_produktu(bizuteria),nazwa_produktu(bransoletka_z_kamieni_szlachetnych),rozmiar_produktu(size_M),kolor_produktu(czarny),stan_magazynowy(15),cena_produktu(800)).
+produkt(id_produktu('5e66e5d5-cb0b-47bb-b5d5-4e6e4b4e4d6d'),typ_produktu(akcesorium),nazwa_produktu(zegarek_z_mechanizmem_automatycznym),rozmiar_produktu(size_L),kolor_produktu(fioletowy),stan_magazynowy(7),cena_produktu(100)).
+produkt(id_produktu('9a7ccbe7-a2a2-401b-8d8d-2c2cba5ba5e5'),typ_produktu(akcesorium),nazwa_produktu(portfel_z_skory_naturalnej),rozmiar_produktu(size_XL),kolor_produktu(szary),stan_magazynowy(3),cena_produktu(200)).
+produkt(id_produktu('a069e9c8-a22f-47b3-b3a3-7043f5f5c5e5'),typ_produktu(akcesorium),nazwa_produktu(torebka_listonoszka),rozmiar_produktu(size_S),kolor_produktu(czerwony),stan_magazynowy(12),cena_produktu(60)).
+produkt(id_produktu('1f3d4e4e-afaf-4e4e-b6b6-6b6b4f4f3f3f'),typ_produktu(akcesorium),nazwa_produktu(kapelusz_panama),rozmiar_produktu(size_M),kolor_produktu(zolty),stan_magazynowy(20),cena_produktu(50)).
+produkt(id_produktu('9e7c6dcd-65f1-473c-95d2-5daeeb4b2105'),typ_produktu(akcesorium),nazwa_produktu(pasek_skorzany),rozmiar_produktu(size_L),kolor_produktu(czarny),stan_magazynowy(13),cena_produktu(120)).
+produkt(id_produktu('18dd8a87-87d7-4161-b1a7-d5d99f87b9e2'),typ_produktu(akcesorium),nazwa_produktu(szelki_do_spodni),rozmiar_produktu(size_M),kolor_produktu(czarny),stan_magazynowy(12),cena_produktu(130)).
+produkt(id_produktu('95dd0f27-b38d-4491-b7b2-00a3fce6e8e6'),typ_produktu(ubranie),nazwa_produktu(spodnica_plisowana),rozmiar_produktu(size_S),kolor_produktu(zielony),stan_magazynowy(8),cena_produktu(180)).
+produkt(id_produktu('38e664c9-f1b6-47f5-b63e-5d5b1f5d1c5e'),typ_produktu(ubranie),nazwa_produktu(sukienka_maxi),rozmiar_produktu(size_L),kolor_produktu(czerwony),stan_magazynowy(5),cena_produktu(80)).
+produkt(id_produktu('1d5b9452-9ac9-45a8-b5cc-f94ea5f5e5c1'),typ_produktu(ubranie),nazwa_produktu(marynarka_z_linii_slim_fit),rozmiar_produktu(size_M),kolor_produktu(szary),stan_magazynowy(15),cena_produktu(100)).
+produkt(id_produktu('4f4e9c7d-9b91-4e87-87d5-d7b6ac27e6f8'),typ_produktu(buty),nazwa_produktu(buty_mokasyny),rozmiar_produktu(size_XS),kolor_produktu(rozowy),stan_magazynowy(6),cena_produktu(150)).
+produkt(id_produktu('e0ad5f5d-a0b2-47b5-bfd5-bfd0a39c6981'),typ_produktu(akcesorium),nazwa_produktu(czapka_zimowa_z_pomponem),rozmiar_produktu(size_M),kolor_produktu(czarny),stan_magazynowy(20),cena_produktu(20)).
+produkt(id_produktu('3b3f3b7d-b8a1-43e6-b5f3-c0137b5e5e5c'),typ_produktu(akcesorium),nazwa_produktu(kominiarka),rozmiar_produktu(size_XL),kolor_produktu(niebieski),stan_magazynowy(10),cena_produktu(70)).
 
 % Zamowienia
 

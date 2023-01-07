@@ -3,9 +3,10 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { EmployeesModule } from './employees/employees.module';
 import { ConfigModule } from '@nestjs/config';
+import { ProductsModule } from './products/products.module';
 
 @Module({
-  imports: [EmployeesModule, ConfigModule.forRoot({ isGlobal: true })],
+  imports: [EmployeesModule, ConfigModule.forRoot({ isGlobal: true }), ProductsModule],
   controllers: [AppController],
   providers: [AppService],
 })

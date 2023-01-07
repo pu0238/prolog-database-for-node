@@ -2,12 +2,10 @@ import { prologDB } from './../../db/prologDB.service';
 import { Injectable, InternalServerErrorException } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import * as crypto from 'crypto';
-import { fstat } from 'fs';
 import { GetEmployees } from './dto/getEmployees.dto';
 
 @Injectable()
 export class EmployeesService {
-  //DATABASE_NAME
   constructor(private readonly configService: ConfigService) {}
 
   private readonly databaseName =
@@ -106,23 +104,15 @@ export class EmployeesService {
     const updateData =
       `pracownik(` +
       `id_pracownika('${idPracownika}'),` +
-      `stanowisko(${
-        queryParams.stanowisko ? queryParams.stanowisko : employee.stanowisko
-      }),` +
+      `stanowisko(${queryParams.stanowisko || employee.stanowisko}),` +
       `imie_pracownika(${
-        queryParams.imiePracownika
-          ? queryParams.imiePracownika
-          : employee.imiePracownika
+        queryParams.imiePracownika || employee.imiePracownika
       }),` +
       `nazwisko_pracownika(${
-        queryParams.nazwiskoPracownika
-          ? queryParams.nazwiskoPracownika
-          : employee.nazwiskoPracownika
+        queryParams.nazwiskoPracownika || employee.nazwiskoPracownika
       }),` +
       `wiek_pracownika(${
-        queryParams.wiekPracownika
-          ? queryParams.wiekPracownika
-          : employee.wiekPracownika
+        queryParams.wiekPracownika || employee.wiekPracownika
       })` +
       `).`;
     await this.prologDBService.update(removeData, updateData);
