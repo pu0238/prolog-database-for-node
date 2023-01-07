@@ -42,7 +42,7 @@ produkt(id_produktu('1f3d4e4e-afaf-4e4e-b6b6-6b6b4f4f3f3f'),typ_produktu(akcesor
 produkt(id_produktu('9e7c6dcd-65f1-473c-95d2-5daeeb4b2105'),typ_produktu(akcesorium),nazwa_ubrania(pasek_skorzany),rozmiar_produktu(L),kolor_ubrania(czarny),stan_magazynowy(13),cena(120)).
 produkt(id_produktu('18dd8a87-87d7-4161-b1a7-d5d99f87b9e2'),typ_produktu(akcesorium),nazwa_ubrania(szelki_do_spodni),rozmiar_produktu(M),kolor_ubrania(czarny),stan_magazynowy(12),cena(130)).
 produkt(id_produktu('95dd0f27-b38d-4491-b7b2-00a3fce6e8e6'),typ_produktu(ubranie),nazwa_ubrania(spodnica_plisowana),rozmiar_produktu(S),kolor_ubrania(zielony),stan_magazynowy(8),cena(180)).
-produkt(id_produktu('38e664c9-f1b6-47f5-b63e-5d5b1f5d1c5e'),typ_produktu(ubranie)nazwa_ubrania(sukienka_maxi),rozmiar_produktu(L),kolor_ubrania(czerwony),stan_magazynowy(5),cena(80)).
+produkt(id_produktu('38e664c9-f1b6-47f5-b63e-5d5b1f5d1c5e'),typ_produktu(ubranie),nazwa_ubrania(sukienka_maxi),rozmiar_produktu(L),kolor_ubrania(czerwony),stan_magazynowy(5),cena(80)).
 produkt(id_produktu('1d5b9452-9ac9-45a8-b5cc-f94ea5f5e5c1'),typ_produktu(ubranie),nazwa_ubrania(marynarka_z_linii_slim_fit),rozmiar_produktu(M),kolor_ubrania(szary),stan_magazynowy(15),cena(100)).
 produkt(id_produktu('4f4e9c7d-9b91-4e87-87d5-d7b6ac27e6f8'),typ_produktu(buty),nazwa_ubrania(buty_mokasyny),rozmiar_produktu(XS),kolor_ubrania(rozowy),stan_magazynowy(6),cena(150)).
 produkt(id_produktu('e0ad5f5d-a0b2-47b5-bfd5-bfd0a39c6981'),typ_produktu(akcesorium),nazwa_ubrania(czapka_zimowa_z_pomponem),rozmiar_produktu(M),kolor_ubrania(czarny),stan_magazynowy(20),cena(20)).
