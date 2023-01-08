@@ -2,25 +2,30 @@ import { Type } from 'class-transformer';
 import { IsNumber, IsOptional, IsString } from 'class-validator';
 import { ApiPropertyOptional } from '@nestjs/swagger';
 
-export class GetEmployees {
+export class GetOrders {
   @ApiPropertyOptional()
   @IsString()
   @IsOptional()
-  imiePracownika: string | undefined;
+  idProduktu: string | undefined;
 
   @ApiPropertyOptional()
   @IsString()
   @IsOptional()
-  nazwiskoPracownika: string | undefined;
+  idMagazyniera: string | undefined;
 
   @ApiPropertyOptional()
   @IsNumber()
   @Type(() => Number)
   @IsOptional()
-  wiekPracownika: number | undefined;
+  iloscProduktu: number | undefined;
 
   @ApiPropertyOptional()
   @IsString()
   @IsOptional()
-  stanowisko: string | undefined;
+  idSprzedawcy: string | undefined;
+
+  @ApiPropertyOptional()
+  @IsString()
+  @IsOptional()
+  statusZamowienia: string | undefined;
 }

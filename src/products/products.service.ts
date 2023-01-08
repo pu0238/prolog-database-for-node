@@ -92,49 +92,45 @@ export class ProductsService {
   }
 
   async removeProduct(idProduktu: string) {
-    const employee = await this.getProduct(idProduktu);
+    const product = await this.getProduct(idProduktu);
     const data =
       `produkt(` +
       `id_produktu('${idProduktu}'),` +
-      `typ_produktu(${employee.typProduktu}),` +
-      `nazwa_produktu(${employee.nazwaProduktu}),` +
-      `rozmiar_produktu(${employee.rozmiarProduktu}),` +
-      `kolor_produktu(${employee.kolorProduktu}),` +
-      `stan_magazynowy(${employee.stanMagazynowy}),` +
-      `cena_produktu(${employee.cenaProduktu})` +
+      `typ_produktu(${product.typProduktu}),` +
+      `nazwa_produktu(${product.nazwaProduktu}),` +
+      `rozmiar_produktu(${product.rozmiarProduktu}),` +
+      `kolor_produktu(${product.kolorProduktu}),` +
+      `stan_magazynowy(${product.stanMagazynowy}),` +
+      `cena_produktu(${product.cenaProduktu})` +
       `).`;
     await this.prologDBService.remove(data);
   }
 
   async updateEmployee(idProduktu: string, queryParams: GetProducts) {
-    const employee = await this.getProduct(idProduktu);
+    const product = await this.getProduct(idProduktu);
     const removeData =
       `produkt(` +
       `id_produktu('${idProduktu}'),` +
-      `typ_produktu(${employee.typProduktu}),` +
-      `nazwa_produktu(${employee.nazwaProduktu}),` +
-      `rozmiar_produktu(${employee.rozmiarProduktu}),` +
-      `kolor_produktu(${employee.kolorProduktu}),` +
-      `stan_magazynowy(${employee.stanMagazynowy}),` +
-      `cena_produktu(${employee.cenaProduktu})` +
+      `typ_produktu(${product.typProduktu}),` +
+      `nazwa_produktu(${product.nazwaProduktu}),` +
+      `rozmiar_produktu(${product.rozmiarProduktu}),` +
+      `kolor_produktu(${product.kolorProduktu}),` +
+      `stan_magazynowy(${product.stanMagazynowy}),` +
+      `cena_produktu(${product.cenaProduktu})` +
       `).`;
     const updateData =
       `pracownik(` +
       `id_pracownika('${idProduktu}'),` +
-      `typ_produktu(${queryParams.typProduktu || employee.typProduktu}),` +
-      `nazwa_produktu(${
-        queryParams.nazwaProduktu || employee.nazwaProduktu
-      }),` +
+      `typ_produktu(${queryParams.typProduktu || product.typProduktu}),` +
+      `nazwa_produktu(${queryParams.nazwaProduktu || product.nazwaProduktu}),` +
       `rozmiar_produktu(${
-        queryParams.rozmiarProduktu || employee.rozmiarProduktu
+        queryParams.rozmiarProduktu || product.rozmiarProduktu
       }),` +
-      `kolor_produktu(${
-        queryParams.kolorProduktu || employee.kolorProduktu
-      }),` +
+      `kolor_produktu(${queryParams.kolorProduktu || product.kolorProduktu}),` +
       `stan_magazynowy(${
-        queryParams.stanMagazynowy || employee.stanMagazynowy
+        queryParams.stanMagazynowy || product.stanMagazynowy
       }),` +
-      `cena_produktu(${queryParams.cenaProduktu || employee.cenaProduktu})` +
+      `cena_produktu(${queryParams.cenaProduktu || product.cenaProduktu})` +
       `).`;
     await this.prologDBService.update(removeData, updateData);
     return await this.getProduct(idProduktu);

@@ -73,7 +73,8 @@ export class prologDB {
       for (const key of Object.keys(answer.links)) {
         const firstKeyToLowerCase =
           key.charAt(0).toLocaleLowerCase() + key.slice(1);
-        answerResult[firstKeyToLowerCase] = answer.links[key].toJavaScript();
+        if (key !== '_')
+          answerResult[firstKeyToLowerCase] = answer.links[key].toJavaScript();
       }
       return answerResult;
     }
