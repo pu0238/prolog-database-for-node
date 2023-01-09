@@ -1,10 +1,10 @@
 % Pracownicy
 
 pracownik(id_pracownika('42adde3b-8025-4d3c-866f-5f3d51c7f8d4'),stanowisko(magazynier),imie_pracownika(jan),nazwisko_pracownika(kowalski),wiek_pracownika(35)).
+pracownik(id_pracownika('d6e597c9-6eb9-474b-9af2-75c4f12733b8'),stanowisko(magazynier),imie_pracownika(anna),nazwisko_pracownika(nowak),wiek_pracownika(29)).
 pracownik(id_pracownika('7edb8be0-14c7-416f-83dd-c3f15b929040'),stanowisko(magazynier),imie_pracownika(piotr),nazwisko_pracownika(wojcik),wiek_pracownika(42)).
 pracownik(id_pracownika('010b5b73-56a6-4dc3-9e14-04d2f58562cc'),stanowisko(magazynier),imie_pracownika(ewa),nazwisko_pracownika(krawczyk),wiek_pracownika(40)).
 pracownik(id_pracownika('ded5c330-4699-4b97-b18b-89b2120a393f'),stanowisko(magazynier),imie_pracownika(tomasz),nazwisko_pracownika(zajac),wiek_pracownika(25)).
-
 pracownik(id_pracownika('123e4567-e89b-12d3-a456-426614174000'),stanowisko(sprzedawca),imie_pracownika(maria),nazwisko_pracownika(nowakowski),wiek_pracownika(30)).
 pracownik(id_pracownika('2cccc6d8-30d5-4216-b6e8-c147e061758e'),stanowisko(sprzedawca),imie_pracownika(maciej),nazwisko_pracownika(dabrowski),wiek_pracownika(28)).
 pracownik(id_pracownika('25d3c05f-456d-4ce2-8ec4-2bc83eec92a1'),stanowisko(sprzedawca),imie_pracownika(krzysztof),nazwisko_pracownika(zielinski),wiek_pracownika(32)).

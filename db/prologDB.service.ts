@@ -77,7 +77,6 @@ export class prologDB {
     const database = await fs.readFileSync(this.pathToDatabase, {
       encoding: 'utf-8',
     });
-    console.log(`${data}`);
     const splitedDatabase = database.split('\n');
     let indexOfData = splitedDatabase.indexOf(data);
     if (indexOfData === -1) {
