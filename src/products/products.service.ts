@@ -1,7 +1,7 @@
 import { GetProducts } from './dto/getProducts.dto';
 import { Injectable, InternalServerErrorException } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
-import { prologDB } from 'db/prologDB.service';
+import { PrologDatabase } from 'src/prolog-database/prolog-database.service';
 import * as crypto from 'crypto';
 
 @Injectable()
@@ -10,7 +10,7 @@ export class ProductsService {
 
   private readonly databaseName =
     this.configService.get<string>('DATABASE_NAME');
-  private prologDBService = new prologDB(this.databaseName);
+  private PrologDatabaseService = new PrologDatabase(this.databaseName);
 
   async getManyProducts(
     typProduktu: string,
@@ -39,7 +39,7 @@ export class ProductsService {
         stan_magazynowy(StanMagazynowy),
         cena_produktu(CenaProduktu)
     ).`;
-    const result = await this.prologDBService.find(query);
+    const result = await this.PrologDatabaseService.find(query);
     if (!result) throw new InternalServerErrorException();
     return result;
   }
@@ -55,7 +55,7 @@ export class ProductsService {
         stan_magazynowy(StanMagazynowy),
         cena_produktu(CenaProduktu)
     ).`;
-    const result = await this.prologDBService.findOne(query);
+    const result = await this.PrologDatabaseService.findOne(query);
     if (!result) throw new InternalServerErrorException();
     return { ...result, idProduktu } as {
       idProduktu: string;
@@ -87,7 +87,7 @@ export class ProductsService {
       `stan_magazynowy(${stanMagazynowy}),` +
       `cena_produktu(${cenaProduktu})` +
       `).`;
-    await this.prologDBService.insert(data);
+    await this.PrologDatabaseService.insert(data);
     return await this.getProduct(idProduktu);
   }
 
@@ -103,7 +103,7 @@ export class ProductsService {
       `stan_magazynowy(${product.stanMagazynowy}),` +
       `cena_produktu(${product.cenaProduktu})` +
       `).`;
-    await this.prologDBService.remove(data);
+    await this.PrologDatabaseService.remove(data);
   }
 
   async updateEmployee(idProduktu: string, queryParams: GetProducts) {
@@ -132,7 +132,7 @@ export class ProductsService {
       }),` +
       `cena_produktu(${queryParams.cenaProduktu || product.cenaProduktu})` +
       `).`;
-    await this.prologDBService.update(removeData, updateData);
+    await this.PrologDatabaseService.update(removeData, updateData);
     return await this.getProduct(idProduktu);
   }
 }

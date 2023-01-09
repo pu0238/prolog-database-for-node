@@ -16,7 +16,6 @@ pracownik(id_pracownika('f5c91f5d-1a1e-4e91-9e9d-7b3a837c0fd5'),stanowisko(sprze
 pracownik(id_pracownika('963c3b3d-3c4a-4f6e-9b2f-6f33ed1f8a64'),stanowisko(sprzedawca),imie_pracownika(maria),nazwisko_pracownika(zielinska),wiek_pracownika(29)).
 pracownik(id_pracownika('b8c77c06-f311-4aa4-9e76-cf5a93532c6e'),stanowisko(sprzedawca),imie_pracownika(tomasz),nazwisko_pracownika(kurczewski),wiek_pracownika(32)).
 pracownik(id_pracownika('1deed744-2341-4438-a6c3-e2ea9b9728cf'),stanowisko(sprzedawca),imie_pracownika(agata),nazwisko_pracownika(rzepka),wiek_pracownika(37)).
-pracownik(id_pracownika('f9db7e07-d65d-44d6-a2e2-60bbe55b6a57'),stanowisko(sprzedawca),imie_pracownika(piotr),nazwisko_pracownika(lewandowski),wiek_pracownika(24)).
 
 % Ubrania
 

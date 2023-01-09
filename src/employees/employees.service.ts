@@ -1,4 +1,4 @@
-import { prologDB } from './../../db/prologDB.service';
+import { PrologDatabase } from '../prolog-database/prolog-database.service';
 import { Injectable, InternalServerErrorException } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import * as crypto from 'crypto';
@@ -10,7 +10,7 @@ export class EmployeesService {
 
   private readonly databaseName =
     this.configService.get<string>('DATABASE_NAME');
-  private prologDBService = new prologDB(this.databaseName);
+  private PrologDatabaseService = new PrologDatabase(this.databaseName);
 
   async getManyEmployees(
     imiePracownika: string,
@@ -33,7 +33,7 @@ export class EmployeesService {
       nazwisko_pracownika(NazwiskoPracownika),
       wiek_pracownika(WiekPracownika)
     ).`;
-    const result = await this.prologDBService.find(query); //await getMany(this.database, query);
+    const result = await this.PrologDatabaseService.find(query); //await getMany(this.database, query);
     if (!result) throw new InternalServerErrorException();
     return result;
   }
@@ -48,7 +48,7 @@ export class EmployeesService {
       wiek_pracownika(WiekPracownika)
     ).`;
 
-    const result = await this.prologDBService.findOne(query);
+    const result = await this.PrologDatabaseService.findOne(query);
     if (!result) throw new InternalServerErrorException();
     return { ...result, idPracownika } as {
       idPracownika: string;
@@ -74,7 +74,7 @@ export class EmployeesService {
       `nazwisko_pracownika(${nazwiskoPracownika}),` +
       `wiek_pracownika(${wiekPracownika})` +
       `).`;
-    await this.prologDBService.insert(data);
+    await this.PrologDatabaseService.insert(data);
     return await this.getEmployee(idPracownika);
   }
 
@@ -88,7 +88,7 @@ export class EmployeesService {
       `nazwisko_pracownika(${employee.nazwiskoPracownika}),` +
       `wiek_pracownika(${employee.wiekPracownika})` +
       `).`;
-    await this.prologDBService.remove(data);
+    await this.PrologDatabaseService.remove(data);
   }
 
   async updateEmployee(idPracownika: string, queryParams: GetEmployees) {
@@ -115,7 +115,7 @@ export class EmployeesService {
         queryParams.wiekPracownika || employee.wiekPracownika
       })` +
       `).`;
-    await this.prologDBService.update(removeData, updateData);
+    await this.PrologDatabaseService.update(removeData, updateData);
     return await this.getEmployee(idPracownika);
   }
 }

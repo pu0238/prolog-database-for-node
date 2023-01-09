@@ -6,11 +6,10 @@ import {
   InternalServerErrorException,
   NotFoundException,
 } from '@nestjs/common';
-import { join } from 'path';
 
 plPromises(pl);
 
-export class prologDB {
+export class PrologDatabase {
   constructor(private readonly databaseName: string) {}
 
   private readonly pathToDatabase = `./db/${this.databaseName}.pl`;

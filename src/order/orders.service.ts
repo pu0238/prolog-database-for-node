@@ -1,6 +1,6 @@
 import { Injectable, InternalServerErrorException } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
-import { prologDB } from 'db/prologDB.service';
+import { PrologDatabase } from 'src/prolog-database/prolog-database.service';
 import * as crypto from 'crypto';
 import { GetOrders } from './dto/getOrders.dto';
 
@@ -10,7 +10,7 @@ export class OrdersService {
 
   private readonly databaseName =
     this.configService.get<string>('DATABASE_NAME');
-  private prologDBService = new prologDB(this.databaseName);
+  private PrologDatabaseService = new PrologDatabase(this.databaseName);
 
   async getManyOrders(
     idProduktu: string,
@@ -36,7 +36,7 @@ export class OrdersService {
         id_sprzedawcy(pracownik(id_pracownika(IdSprzedawcy),_,_,_,_)),
         status(StatusZamowienia)
     ).`;
-    const result = await this.prologDBService.find(query);
+    const result = await this.PrologDatabaseService.find(query);
     if (!result) throw new InternalServerErrorException();
     return result;
   }
@@ -51,7 +51,7 @@ export class OrdersService {
         id_sprzedawcy(pracownik(id_pracownika(IdSprzedawcy),_,_,_,_)),
         status(StatusZamowienia)
     ).`;
-    const result = await this.prologDBService.findOne(query);
+    const result = await this.PrologDatabaseService.findOne(query);
     if (!result) throw new InternalServerErrorException();
     return { ...result, idZamowienia } as {
       idZamowienia: string;
@@ -81,7 +81,7 @@ export class OrdersService {
       `id_sprzedawcy(pracownik(id_pracownika('${idSprzedawcy}'),_,_,_,_)),` +
       `status(${statusZamowienia})` +
       `).`;
-    await this.prologDBService.insert(data);
+    await this.PrologDatabaseService.insert(data);
     return await this.getOrder(idZamowienia);
   }
 
@@ -96,7 +96,7 @@ export class OrdersService {
       `id_sprzedawcy(pracownik(id_pracownika('${order.idSprzedawcy}'),_,_,_,_)),` +
       `status(${order.statusZamowienia})` +
       `).`;
-    await this.prologDBService.remove(data);
+    await this.PrologDatabaseService.remove(data);
   }
 
   async updateOrder(idZamowienia: string, queryParams: GetOrders) {
@@ -126,7 +126,7 @@ export class OrdersService {
       }'),_,_,_,_)),` +
       `status(${queryParams.statusZamowienia || order.statusZamowienia})` +
       `).`;
-    await this.prologDBService.update(removeData, updateData);
+    await this.PrologDatabaseService.update(removeData, updateData);
     return await this.getOrder(idZamowienia);
   }
 }
