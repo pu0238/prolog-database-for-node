@@ -13,7 +13,7 @@ import { OrdersService } from './orders.service';
 import { GetOrders } from './dto/getOrders.dto';
 import { InsertOrder } from './dto/insertOrder.dto';
 
-@ApiTags('Orderss')
+@ApiTags('Orders')
 @Controller('orders')
 export class OrdersController {
   constructor(private readonly ordersService: OrdersService) {}

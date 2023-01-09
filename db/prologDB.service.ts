@@ -1,7 +1,12 @@
 import pl from 'tau-prolog';
 import plPromises from 'tau-prolog/modules/promises.js';
 import * as fs from 'fs';
-import { ConflictException, NotFoundException } from '@nestjs/common';
+import {
+  ConflictException,
+  InternalServerErrorException,
+  NotFoundException,
+} from '@nestjs/common';
+import { join } from 'path';
 
 plPromises(pl);
 
@@ -42,23 +47,47 @@ export class prologDB {
     for await (const answer of session.promiseAnswers()) {
       if (answer) throw new ConflictException('Data already exist');
     }
-    await fs.appendFileSync(this.pathToDatabase, `${data}\n`);
+    await fs.appendFileSync(this.pathToDatabase, `\n${data}`);
     await session.promiseConsult(this.pathToDatabase, { file: true });
   }
 
   async update(dataToReplace, newData) {
     const session = pl.create(1000);
-    const database = await fs.readFileSync(this.pathToDatabase).toString();
-    const result = database.replace(`${dataToReplace}\n`, `${newData}\n`);
-    await fs.writeFileSync(this.pathToDatabase, result);
+    const database = await fs.readFileSync(this.pathToDatabase, {
+      encoding: 'utf-8',
+    });
+    const splitedDatabase = database.split('\n');
+    let indexOfData = splitedDatabase.indexOf(dataToReplace);
+    if (indexOfData === -1) {
+      indexOfData = splitedDatabase.indexOf(`${dataToReplace}\r`);
+      if (indexOfData === -1) {
+        throw new InternalServerErrorException();
+      } else {
+        splitedDatabase[indexOfData] = `${newData}\r`;
+      }
+    } else {
+      splitedDatabase[indexOfData] = newData;
+    }
+    await fs.writeFileSync(this.pathToDatabase, splitedDatabase.join());
     await session.promiseConsult(this.pathToDatabase, { file: true });
   }
 
   async remove(data) {
     const session = pl.create(1000);
-    const database = await fs.readFileSync(this.pathToDatabase).toString();
-    const result = database.replace(`${data}\n`, '');
-    await fs.writeFileSync(this.pathToDatabase, result);
+    const database = await fs.readFileSync(this.pathToDatabase, {
+      encoding: 'utf-8',
+    });
+    console.log(`${data}`);
+    const splitedDatabase = database.split('\n');
+    let indexOfData = splitedDatabase.indexOf(data);
+    if (indexOfData === -1) {
+      indexOfData = splitedDatabase.indexOf(`${data}\r`);
+      if (indexOfData === -1) {
+        throw new InternalServerErrorException();
+      }
+    }
+    splitedDatabase.splice(indexOfData, 1);
+    await fs.writeFileSync(this.pathToDatabase, splitedDatabase.join('\n'));
     await session.promiseConsult(this.pathToDatabase, { file: true });
   }
 
