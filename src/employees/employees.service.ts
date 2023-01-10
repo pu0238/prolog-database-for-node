@@ -20,7 +20,7 @@ export class EmployeesService {
   ) {
     const query = `
     pracownik(
-      id_pracownika(IdPracownika),
+      id_produktu(IdPracownika),
       stanowisko(${stanowisko}),
       imie_pracownika(${imiePracownika}),
       nazwisko_pracownika(${nazwiskoPracownika}),

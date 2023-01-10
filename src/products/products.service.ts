@@ -119,7 +119,7 @@ export class ProductsService {
       `cena_produktu(${product.cenaProduktu})` +
       `).`;
     const updateData =
-      `pracownik(` +
+      `produkt(` +
       `id_pracownika('${idProduktu}'),` +
       `typ_produktu(${queryParams.typProduktu || product.typProduktu}),` +
       `nazwa_produktu(${queryParams.nazwaProduktu || product.nazwaProduktu}),` +
