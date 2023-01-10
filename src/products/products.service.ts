@@ -120,7 +120,7 @@ export class ProductsService {
       `).`;
     const updateData =
       `produkt(` +
-      `id_pracownika('${idProduktu}'),` +
+      `id_produktu('${idProduktu}'),` +
       `typ_produktu(${queryParams.typProduktu || product.typProduktu}),` +
       `nazwa_produktu(${queryParams.nazwaProduktu || product.nazwaProduktu}),` +
       `rozmiar_produktu(${

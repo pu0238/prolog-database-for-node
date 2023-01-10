@@ -44,7 +44,7 @@ produkt(id_produktu('38e664c9-f1b6-47f5-b63e-5d5b1f5d1c5e'),typ_produktu(ubranie
 produkt(id_produktu('1d5b9452-9ac9-45a8-b5cc-f94ea5f5e5c1'),typ_produktu(ubranie),nazwa_produktu(marynarka_z_linii_slim_fit),rozmiar_produktu(m),kolor_produktu(szary),stan_magazynowy(15),cena_produktu(10000)).
 produkt(id_produktu('4f4e9c7d-9b91-4e87-87d5-d7b6ac27e6f8'),typ_produktu(buty),nazwa_produktu(buty_mokasyny),rozmiar_produktu(xs),kolor_produktu(rozowy),stan_magazynowy(6),cena_produktu(15000)).
 produkt(id_produktu('e0ad5f5d-a0b2-47b5-bfd5-bfd0a39c6981'),typ_produktu(akcesorium),nazwa_produktu(czapka_zimowa_z_pomponem),rozmiar_produktu(m),kolor_produktu(czarny),stan_magazynowy(20),cena_produktu(2000)).
-produkt(id_produktu('3b3f3b7d-b8a1-43e6-b5f3-c0137b5e5e5c'),typ_produktu(akcesorium),nazwa_produktu(kominiarka),rozmiar_produktu(xl),kolor_produktu(niebieski),stan_magazynowy(10),cena_produktu(7000)).
+produkt(id_pracownika('3b3f3b7d-b8a1-43e6-b5f3-c0137b5e5e5c'),typ_produktu(sss),nazwa_produktu(string),rozmiar_produktu(string),kolor_produktu(string),stan_magazynowy(10),cena_produktu(7000)).
 
 % Zamowienia
 
