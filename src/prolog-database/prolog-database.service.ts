@@ -67,7 +67,7 @@ export class PrologDatabase {
     } else {
       splitedDatabase[indexOfData] = newData;
     }
-    await fs.writeFileSync(this.pathToDatabase, splitedDatabase.join());
+    await fs.writeFileSync(this.pathToDatabase, splitedDatabase.join('\n'));
     await session.promiseConsult(this.pathToDatabase, { file: true });
   }
 

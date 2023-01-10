@@ -11,7 +11,7 @@ pracownik(id_pracownika('25d3c05f-456d-4ce2-8ec4-2bc83eec92a1'),stanowisko(sprze
 pracownik(id_pracownika('dc933e94-4923-4792-a7f0-66b516cea0b9'),stanowisko(sprzedawca),imie_pracownika(michal),nazwisko_pracownika(kaminski),wiek_pracownika(34)).
 pracownik(id_pracownika('8552d9ed-95cb-4826-a4c8-5f4a2418d49d'),stanowisko(sprzedawca),imie_pracownika(krzysztof),nazwisko_pracownika(dudek),wiek_pracownika(36)).
 pracownik(id_pracownika('3b6df4cb-8f98-4d1a-9b2f-1f35de27b307'),stanowisko(sprzedawca),imie_pracownika(marcin),nazwisko_pracownika(wojciechowski),wiek_pracownika(28)).
-pracownik(id_pracownika('5042d6b4-4e4f-4c2a-87e5-dd0bfa567e96'),stanowisko(sprzedawca),imie_pracownika(anna),nazwisko_pracownika(nowak),wiek_pracownika(40)).
+pracownik(id_pracownika('5042d6b4-4e4f-4c2a-87e5-dd0bfa567e96'),stanowisko(string),imie_pracownika(dddddd),nazwisko_pracownika(string),wiek_pracownika(40)).
 pracownik(id_pracownika('f5c91f5d-1a1e-4e91-9e9d-7b3a837c0fd5'),stanowisko(sprzedawca),imie_pracownika(marek),nazwisko_pracownika(kowalewski),wiek_pracownika(45)).
 pracownik(id_pracownika('963c3b3d-3c4a-4f6e-9b2f-6f33ed1f8a64'),stanowisko(sprzedawca),imie_pracownika(maria),nazwisko_pracownika(zielinska),wiek_pracownika(29)).
 pracownik(id_pracownika('b8c77c06-f311-4aa4-9e76-cf5a93532c6e'),stanowisko(sprzedawca),imie_pracownika(tomasz),nazwisko_pracownika(kurczewski),wiek_pracownika(32)).
