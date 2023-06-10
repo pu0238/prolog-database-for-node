@@ -44,10 +44,9 @@ produkt(id_produktu('38e664c9-f1b6-47f5-b63e-5d5b1f5d1c5e'),typ_produktu(ubranie
 produkt(id_produktu('1d5b9452-9ac9-45a8-b5cc-f94ea5f5e5c1'),typ_produktu(ubranie),nazwa_produktu(marynarka_z_linii_slim_fit),rozmiar_produktu(m),kolor_produktu(szary),stan_magazynowy(15),cena_produktu(10000)).
 produkt(id_produktu('4f4e9c7d-9b91-4e87-87d5-d7b6ac27e6f8'),typ_produktu(buty),nazwa_produktu(buty_mokasyny),rozmiar_produktu(xs),kolor_produktu(rozowy),stan_magazynowy(6),cena_produktu(15000)).
 produkt(id_produktu('e0ad5f5d-a0b2-47b5-bfd5-bfd0a39c6981'),typ_produktu(akcesorium),nazwa_produktu(czapka_zimowa_z_pomponem),rozmiar_produktu(m),kolor_produktu(czarny),stan_magazynowy(20),cena_produktu(2000)).
-produkt(id_pracownika('3b3f3b7d-b8a1-43e6-b5f3-c0137b5e5e5c'),typ_produktu(sss),nazwa_produktu(string),rozmiar_produktu(string),kolor_produktu(string),stan_magazynowy(10),cena_produktu(7000)).
+produkt(id_produktu('3b3f3b7d-b8a1-43e6-b5f3-c0137b5e5e5c'),typ_produktu(sss),nazwa_produktu(string),rozmiar_produktu(string),kolor_produktu(string),stan_magazynowy(10),cena_produktu(7000)).
 
 % Zamowienia
-
 zamowienie(id_zamowienia('621fa508-5601-4a72-9e33-c613e7d13e53'),id_produktu(produkt(id_produktu('9e7c6dcd-65f1-473c-95d2-5daeeb4b2105'),_,_,_,_,_)),ilosc(2),id_magazyniera(pracownik(id_pracownika('42adde3b-8025-4d3c-866f-5f3d51c7f8d4'),_,_,_,_)),id_sprzedawcy(pracownik(id_pracownika('123e4567-e89b-12d3-a456-426614174000'),_,_,_,_)),status(nowe)).
 zamowienie(id_zamowienia('043c9e31-bdd0-4fc3-b5e9-8a52a8863a67'),id_produktu(produkt(id_produktu('485b09a1-c0ba-4613-babd-65110dbc877d'),_,_,_,_,_)),ilosc(4),id_magazyniera(pracownik(id_pracownika('d6e597c9-6eb9-474b-9af2-75c4f12733b8'),_,_,_,_)),id_sprzedawcy(pracownik(id_pracownika('2cccc6d8-30d5-4216-b6e8-c147e061758e'),_,_,_,_)),status(realizowane)).
 zamowienie(id_zamowienia('fac23e09-ac3c-4214-8d12-90f70ceeebc5'),id_produktu(produkt(id_produktu('0ba05e10-d85a-4fc5-a08d-6647dcca339a'),_,_,_,_,_)),ilosc(1),id_magazyniera(pracownik(id_pracownika('7edb8be0-14c7-416f-83dd-c3f15b929040'),_,_,_,_)),id_sprzedawcy(pracownik(id_pracownika('25d3c05f-456d-4ce2-8ec4-2bc83eec92a1'),_,_,_,_)),status(wyslane)).
@@ -74,3 +73,5 @@ zamowienie(id_zamowienia('67083e90-45fc-41cf-baf8-5b3e85256c7f'),id_produktu(pro
 zamowienie(id_zamowienia('161a4772-99b6-4318-9026-c6a0f9d36544'),id_produktu(produkt(id_produktu('f3f7dbb5-cb1e-4ca2-a377-7a7a788d1c13'),_,_,_,_,_)),ilosc(4),id_magazyniera(pracownik(id_pracownika('7edb8be0-14c7-416f-83dd-c3f15b929040'),_,_,_,_)),id_sprzedawcy(pracownik(id_pracownika('dc933e94-4923-4792-a7f0-66b516cea0b9'),_,_,_,_)),status(zrealizowane)).
 
 % Dane dodane przez serwis
+
+pracownik(id_pracownika('522273d6-f7df-4c39-960d-f8316884d396'),stanowisko(string),imie_pracownika(string),nazwisko_pracownika(string),wiek_pracownika(0)).
